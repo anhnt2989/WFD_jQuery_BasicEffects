@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#start").click(function () {
+                let div = $("div");
+                let bg = $("#background");
+                div.animate({left: '100px'}, {duration: 500});
+                div.animate({fontSize: '100px'}, {duration: 500});
+                // div.animate({fontSize: '100px'}, {duration: 500, queue: false});
+                bg.animate({width: '330px', height: '100px'}, {duration: 500});
+                // bg.animate({width: '330px', height: '100px'}, {duration: 500, queue: false});
+            });
+
+            $("#reset").click(function () {
+                let div = $("div");
+                let bg = $("#background");
+                div.animate({left: 0}, {duration: 500});
+                div.animate({fontSize: '16px'}, {duration: 500});
+                // div.animate({fontSize: '16px'}, {duration: 500, queue: false});
+                bg.animate({width: '60px', height: '20px'}, {duration: 500});
+                // bg.animate({width: '60px', height: '20px'}, {duration: 500, queue: false});
+            })
+        });
+    </script>
+    <title>Hello Animate</title>
+</head>
+<style>
+    #container {
+        position: relative;
+        width: 600px;
+        height: 600px;
+    }
+
+    #text, #background {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    #text {
+        z-index: 10;
+    }
+</style>
+<body>
+<button id="start">Start Animation</button>
+<button id="reset">Reset</button>
+<p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to
+    first set the CSS position property of the element to relative, fixed, or absolute!</p>
+<div id="container">
+    <div id="text" style="position:absolute;">HELLO</div>
+    <div id="background" style="background:#98bf21;height:20px;width:60px;position: absolute"></div>
+</div>
+</body>
+</html>
